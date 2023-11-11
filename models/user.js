@@ -1,7 +1,12 @@
-const mongoose = require('./index');
+var mongoose = require('./index');
 
-const userSchema = new mongoose.Schema({
-  "email": String,
+var UserSchema = mongoose.Schema({
+  email: {
+    type: String,
+    unique: true,
+  },
 });
 
-module.exports = userSchema;
+var UserModel = mongoose.model('User', UserSchema);
+
+module.exports = UserModel;
