@@ -9,6 +9,10 @@ var UserSchema = mongoose.Schema({
     type: String,
     unique: true,
   },
+  createDt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 var UserModel = mongoose.model('User', UserSchema);
