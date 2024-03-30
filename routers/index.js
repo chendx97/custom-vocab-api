@@ -1,18 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const { cookieName } = require('../utils/constant');
+const { cookieName } = require('../config');
 
 // 登录拦截校验
-router.use((req, res, next) => {
-  const cookie = req.cookies[cookieName];
-  if (!cookie) {
-    res.json({
-      code: 403,
-      message: '未登录',
-    });
-  }
-  next();
-});
+// router.use((req, res, next) => {
+//   const cookie = req.cookies[cookieName];
+//   if (!cookie) {
+//     res.json({
+//       code: 403,
+//       message: '未登录',
+//     });
+//   }
+//   next();
+// });
 
 // 格式化返回值
 router.use((req, res, next) => {

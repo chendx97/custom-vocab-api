@@ -1,7 +1,11 @@
 var mongoose = require('./index');
 
 var UserSchema = mongoose.Schema({
-  email: {
+  name: {
+    type: String,
+    unique: true,
+  },
+  pwd: {
     type: String,
     unique: true,
   },

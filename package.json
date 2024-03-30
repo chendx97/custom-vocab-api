@@ -1,12 +1,10 @@
 {
-  "name": "node-template",
+  "name": "custom-vocab-api",
   "version": "1.0.0",
-  "description": "node项目模板",
+  "description": "单词库接口",
   "keywords": [
-    "node",
-    "api",
-    "template",
-    "模板"
+    "单词库",
+    "vocabulary"
   ],
   "main": "index.js",
   "scripts": {
