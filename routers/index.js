@@ -3,23 +3,23 @@ const router = express.Router();
 const { cookieName } = require('../config');
 
 // 登录拦截校验
-// router.use((req, res, next) => {
-//   const cookie = req.cookies[cookieName];
-//   if (!cookie) {
-//     res.json({
-//       code: 403,
-//       message: '未登录',
-//     });
-//   }
-//   next();
-// });
+router.use((req, res, next) => {
+  const cookie = req.cookies[cookieName];
+  if (!cookie && !['/user/login', '/user/add'].includes(req.path)) {
+    res.json({
+      code: 403,
+      message: '未登录',
+    });
+  }
+  next();
+});
 
 // 格式化返回值
 router.use((req, res, next) => {
-  res.jsonSuccess = (data) => {
+  res.jsonSuccess = (message, data) => {
     res.json({
       code: 200,
-      message: 'success',
+      message,
       result: data,
     });
   };

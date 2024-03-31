@@ -7,7 +7,7 @@ var UserSchema = mongoose.Schema({
   },
   pwd: {
     type: String,
-    unique: true,
+    required: true,
   },
   createDt: {
     type: Date,
